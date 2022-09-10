@@ -22,7 +22,7 @@ function ReusableForm(props) {
           type='text'
           name='roast'
           placeholder='Coffee Roast' />
-        <button type='submit'>Help!</button>
+        <button type='submit'>Submit Order</button>
       </form>
     </React.Fragment>
   );

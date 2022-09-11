@@ -2,6 +2,7 @@ import React from "react";
 import NewCoffeeForm from "./NewCoffeeForm";
 import CoffeeList from "./CoffeeList";
 import CoffeeDetail from "./CoffeeDetail";
+import EditCoffeeForm from "./EditCoffeeForm";
 
 class CoffeeControl extends React.Component {
 
@@ -61,14 +62,16 @@ class CoffeeControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if (this.state.selectedCoffee != null) {
+    if (this.state.editing ) {
+      currentlyVisibleState = <EditCoffeeForm coffee = {this.state.selectedCoffee} />
+      buttonText = "Return to Coffee List";
+    } else if (this.state.selectedCoffee != null) {
       currentlyVisibleState = <CoffeeDetail 
       coffee = {this.state.selectedCoffee} 
       onClickingDelete = {this.handleDeletingCoffee} 
       onClickingEdit = {this.handleEditClick}/>
       buttonText = "Return to Coffee List";
-    }
-    else if (this.state.formVisibleOnPage) {
+    } else if (this.state.formVisibleOnPage) {
       currentlyVisibleState = <NewCoffeeForm onNewCoffeeCreation={this.handleAddingNewCoffeeToList}/>
       buttonText = "Return to Coffee List";
     } else {

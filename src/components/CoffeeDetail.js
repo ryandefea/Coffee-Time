@@ -6,7 +6,7 @@ function CoffeeDetail(props){
 
   return (
     <React.Fragment>
-      <h1>Coffee Detail</h1>
+      <h1>Coffee Order Detail</h1>
       <h3>{coffee.name} - {coffee.origin}</h3>
       <p>{coffee.price}</p>
       <p>{coffee.roast}</p>

@@ -25,6 +25,19 @@ class CoffeeControl extends React.Component {
     });
   }
 
+  handlesSellingCoffee = () => {
+    const coffeeSold = {
+      name: this.state.selectedCoffee.name,
+      origin: this.state.selectedCoffee.origin,
+      price: this.state.selectedCoffee.price,
+      roast: this.state.selectedCoffee.roast,
+      burlapOfBeans: this.state.selectedCoffee.burlapOfBeans -=1,
+      id: this.state.selectedCoffee.id,
+      key: this.state.selectedCoffee.id
+    };
+    this.setState({selectedCoffee: coffeeSold});
+  }
+
   handleChangingSelectedCoffee = (id) => {
     const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
     this.setState({selectedCoffee: selectedCoffee});

@@ -25,7 +25,7 @@ class CoffeeControl extends React.Component {
     });
   }
 
-  handlesSellingCoffee = () => {
+  handleSellingCoffee = () => {
     const coffeeSold = {
       name: this.state.selectedCoffee.name,
       origin: this.state.selectedCoffee.origin,

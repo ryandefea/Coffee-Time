@@ -26,6 +26,7 @@ class CoffeeControl extends React.Component {
   }
 
   handleSellingCoffee = () => {
+    if(this.state.selectedCoffee.burlapOfBeans !== 0){
     const coffeeSold = {
       name: this.state.selectedCoffee.name,
       origin: this.state.selectedCoffee.origin,
@@ -37,6 +38,7 @@ class CoffeeControl extends React.Component {
     };
     this.setState({selectedCoffee: coffeeSold});
   }
+}
 
   handleChangingSelectedCoffee = (id) => {
     const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];

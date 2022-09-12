@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Coffee Time
+
+React application that tracks the inventory of a Coffee shop.  
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

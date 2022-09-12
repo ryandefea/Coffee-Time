@@ -11,7 +11,8 @@ function EditCoffeeForm (props) {
       name: event.target.name.value, 
       origin: event.target.origin.value, 
       price: event.target.price.value, 
-      roast: event.target.roast.value, 
+      roast: event.target.roast.value,
+      burlapOfBeans: coffee.burlapOfBeans, 
       id: coffee.id})
   }
   return (

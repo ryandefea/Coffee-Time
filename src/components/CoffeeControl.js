@@ -25,20 +25,37 @@ class CoffeeControl extends React.Component {
     });
   }
 
-  handleSellingCoffee = () => {
-    if(this.state.selectedCoffee.burlapOfBeans !== 0){
-    const coffeeSold = {
-      name: this.state.selectedCoffee.name,
-      origin: this.state.selectedCoffee.origin,
-      price: this.state.selectedCoffee.price,
-      roast: this.state.selectedCoffee.roast,
-      burlapOfBeans: this.state.selectedCoffee.burlapOfBeans -=1,
-      id: this.state.selectedCoffee.id,
-      key: this.state.selectedCoffee.id
-    };
-    this.setState({selectedCoffee: coffeeSold});
+//   handleSellingCoffee = () => {
+//     if(this.state.selectedCoffee.burlapOfBeans !== 0){
+//     const coffeeSold = {
+//       name: this.state.selectedCoffee.name,
+//       origin: this.state.selectedCoffee.origin,
+//       price: this.state.selectedCoffee.price,
+//       roast: this.state.selectedCoffee.roast,
+//       burlapOfBeans: this.state.selectedCoffee.burlapOfBeans -=1,
+//       id: this.state.selectedCoffee.id,
+//       key: this.state.selectedCoffee.id
+//     };
+//     this.setState({selectedCoffee: coffeeSold});
+//   }
+// }
+
+  handleSellingCoffee = (id) => {
+    console.log("made it")
+    const coffeeSold = this.state.mainCoffeeList.map((coffee)=>{
+      if (coffee.id === id){
+        if (coffee.burlapOfBeans > 0){
+          return {
+            ...coffee,
+            burlapOfBeans: coffee.burlapOfBeans - 1,
+          };
+        } else {
+          return coffee;
+        }
+      }
+    })
+    this.setState({mainCoffeeList: coffeeSold})
   }
-}
 
   handleChangingSelectedCoffee = (id) => {
     const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];

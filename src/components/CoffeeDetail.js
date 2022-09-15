@@ -13,7 +13,7 @@ function CoffeeDetail(props){
       <p>{coffee.burlapOfBeans}/lbs</p>
       <button onClick={ props.onClickingEdit }>Update Order</button>
       <button onClick={()=> props.onClickingDelete(coffee.id) }>Delete Order</button>
-      <button onClick={()=> onClickingSellBag()}>Sell 1lb of Coffee</button>
+      <button onClick={()=> onClickingSellBag(coffee.id)}>Sell 1lb of Coffee</button>
       <hr/>
     </React.Fragment>
   );
